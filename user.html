@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+             /* Style the header with a grey background and some padding */
+.header {
+  overflow: hidden;
+  background-color: rgba(119, 145, 194, 0.349);
+  padding: 20px 10px;
+}
+
+/* Style the header links */
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Change the background color on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active/current link*/
+.header a.active {
+ 
+  color: black;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+
+/*tag*/
+/* Style the tab */
+.tab {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  width: 15%;
+  height: 1500px;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  border: 1px solid #ccc;
+  width: 85%;
+  border-left: none;
+  height: 1500px;
+  display: none;
+}
+
+/* Clear floats after the tab */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*provide*/
+.provide-info {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.provide-info h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.provide-info form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.provide-info label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.provide-info input[type="text"],
+.provide-info input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.provide-info .btn-update {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.provide-info .btn-update:hover {
+  background-color: #3e8e41;
+}
+
+/* voting form*/
+.vote-form {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.vote-form h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.vote-form form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.vote-form label {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.vote-form input[type="text"],
+.vote-form input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.vote-form .btn-login {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.vote-form .btn-login:hover {
+  background-color: #3e8e41;
+}
+
+/*lịch sử*/
+.vote-history {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.vote-history h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.vote-history ul.vote-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vote-history li {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.vote-history h3 {
+  font-size: 16px;
+  margin-top: 0;
+}
+
+.vote-history p {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.vote-history ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.vote-history ul li {
+  margin-left: 20px;
+}
+
+/* form đăng xuất*/
+.logout-form {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.logout-form h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.logout-form p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.logout-form form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logout-form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.logout-form .btn-logout {
+  margin-right: 10px;
+}
+
+.logout-form .btn-logout:hover,
+.logout-form .btn-cancel:hover {
+  background-color: #3e8e41;
+}
+    </style>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="#default" class="logo">BLOCKCHAIN VOTING</a>
+            <div class="header-right">
+              <a class="active" href="#home">Home</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+            </div>
+          </div>
+        
+    </header>
+
+    <main>
+        <div class="tab">
+            <button class="tablinks" onmouseover="openCity(event, 'London')">
+                <div><center><img src="n1.PNG" alt="" style="border: 2px solid black; border-radius: 200px; width: 200px;"></center></div>
+                <center>Dashboard</center></button>
+            <button class="tablinks" onmouseover="openCity(event, 'Paris')"><center>Join a vote</center></button>
+            <button class="tablinks" onmouseover="openCity(event, 'hi')"><center>Participation history</center></button>
+            <button class="tablinks" onmouseover="openCity(event, 'ha')"><center>Log out</center></button>
+    
+        </div>
+
+
+        <div id="London" class="tabcontent">
+      
+            <div class="provide-info">
+                <h2> Provide</h2>
+                <form>
+                  <label for="name">Tên:</label>
+                  <input type="text" id="name" name="name" value="Nguyễn Văn A">
+              
+                  <label for="age">Tuổi:</label>
+                  <input type="number" id="age" name="age" value="30">
+              
+                  <label for="address">Địa chỉ:</label>
+                  <input type="text" id="address" name="address" value="123 Đường ABC, TP.HCM">
+              
+                  <label for="code">Mã số:</label>
+                  <input type="text" id="code" name="code" value="PV123456">
+              
+                  <button type="submit" class="btn-update">Cập nhật</button>
+                </form>
+              </div>
+            
+            
+        </div>
+
+        <div id="Paris" class="tabcontent">
+            <div class="vote-form">
+                <h2>Đăng nhập để bầu chọn</h2>
+                <form>
+                  <label for="id">ID:</label>
+                  <input type="text" id="id" name="id">
+              
+                  <label for="password">Mật khẩu:</label>
+                  <input type="password" id="password" name="password">
+              
+                  <button type="submit" class="btn-login">Đăng nhập</button>
+                </form>
+              </div>
+            
+            
+        </div>
+
+        <div id="hi" class="tabcontent">
+            <div class="vote-history">
+                <h2>Lịch sử bầu chọn</h2>
+                <ul class="vote-list">
+                  <li>
+                    <h3>Cuộc bầu chọn 1</h3>
+                    <p>Thời gian: 01/01/2022 - 05/01/2022</p>
+                    <p>Kết quả:</p>
+                    <ul>
+                      <li>Tùy chọn 1: 30%</li>
+                      <li>Tùy chọn 2: 40%</li>
+                      <li>Tùy chọn 3: 10%</li>
+                      <li>Tùy chọn 4: 20%</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h3>Cuộc bầu chọn 2</h3>
+                    <p>Thời gian: 06/01/2022 - 10/01/2022</p>
+                    <p>Kết quả:</p>
+                    <ul>
+                      <li>Tùy chọn 1: 20%</li>
+                      <li>Tùy chọn 2: 50%</li>
+                      <li>Tùy chọn 3: 5%</li>
+                      <li>Tùy chọn 4: 25%</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            
+            
+        </div>
+        <div id="ha" class="tabcontent">
+           
+           <center> <div class="logout-form">
+            <h2>Xác nhận đăng xuất</h2>
+            <p>Bạn có chắc chắn muốn đăng xuất?</p>
+            <form>
+             <center> <a type="submit" class="btn-logout" href="mainpage.html">Đăng xuất</a>
+                <button type="button" class="btn-cancel">Hủy</button></center>
+            </form>
+          </div>
+        </center>
+        </div>
+    </main>
+    <script>
+          function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+
+
+        const form = document.querySelector('.provide-info form');
+const nameInput = document.getElementById('name');
+const ageInput = document.getElementById('age');
+const addressInput = document.getElementById('address');
+const codeInput = document.getElementById('code');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const name = nameInput.value;
+  const age = ageInput.value;
+  const address = addressInput.value;
+  const code = codeInput.value;
+
+  // Gửi dữ liệu lên server
+  // ...
+  
+  alert('Thông tin đã được cập nhật!');
+});
+
+/*form đn*/
+const form1 = document.querySelector('.vote-form form');
+const idInput = document.getElementById('id');
+const passwordInput = document.getElementById('password');
+
+form1.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const id = idInput.value;
+  const password = passwordInput.value;
+
+  // Kiểm tra ID và mật khẩu
+  if (id === 'your_id' && password === 'your_password') {
+    window.location.href = 'link_to_vote_page.html';
+  } else {
+    alert('ID hoặc mật khẩu không đúng!');
+  }
+});
+
+
+const form3 = document.querySelector('.logout-form form');
+const btnCancel = document.querySelector('.logout-form .btn-cancel');
+
+form3.addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Thực hiện đăng xuất
+  // ...
+
+  alert('Đăng xuất thành công!');
+});
+
+btnCancel.addEventListener('click', function() {
+  // Quay lại trang chủ hoặc trang trước đó
+  window.history.back();
+});
+    </script>
+</body>
+</html>

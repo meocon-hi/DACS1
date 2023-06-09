@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*header*/
+        body{
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+        padding: 0;
+        margin: 0;
+        width: auto;
+        background-color: white;
+        border-bottom: 0.5px solid black;
+        color: rgba(76, 124, 179, 0.822);
+        }
+
+        .logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 50px;
+        margin-right: 14%;
+        }
+
+        nav {
+        display: flex;
+        }
+
+        .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        }
+
+        .nav-links li {
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-right: 30px;
+        font-size: 25px;
+        }
+
+        .nav-links li:first-child {
+        margin-left: 0;
+        }
+
+        .nav-links a {
+        color: #4e80af;
+        text-decoration: none;
+        }
+
+        .mobile-menu {
+        display: none;
+        cursor: pointer;
+        }
+
+        .mobile-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background-color: #161010;
+        transition: all 0.3s ease-in-out;
+        }
+
+        .search {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+        }
+
+        .search input {
+        width: 300px;
+        padding: 5px;
+
+        border-radius: 5px;
+        }
+
+        .search button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        }
+
+        .login {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+        }
+
+        .login-btn,
+        .register-btn {
+        padding: 5px 10px;
+        margin-left: 10px;
+        font-size: 25px;
+        background-color: transparent;
+        color: #20438d;
+        cursor: pointer;
+        border: none;
+        margin-right: 50px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .login-btn:hover,
+        .register-btn:hover {
+        background-color: #4a84b4c5;
+        color: #333;
+        }
+
+        @media screen and (max-width: 1145px) {
+        .nav-links {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #312e2e;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links.active {
+            left: 0;
+        }
+
+        .nav-links li {
+            margin: 20px 0;
+        }
+
+        .mobile-menu {
+            display: block;
+        }
+
+        .search,
+        .login {
+            display: none;
+        }
+        }
+
+        /*sao*/
+        .checked {
+  color: orange;
+}
+@media (max-width: 576px) {
+  .fa {
+    font-size: 3rem;
+  }
+}
+      
+       /* mục cuối */
+       .card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-overlay-text {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.card:hover .card-overlay {
+  opacity: 1;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bi {
+  vertical-align: middle;
+}
+
+/* cái nút */
+.btn1-read-more {
+  background-color: #488eaf;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn1-read-more:hover {
+  background-color: #fff;
+  color: #82a3b942;
+}
+         .chan{
+      background-color: #69a0c0a8;
+      padding: 30px ;
+     }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="main2.html">Home</a></li>
+            <li><a href="main3.html">Contact</a></li>
+            <li><a href="main4.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Search...">
+          <button type="button"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="login">
+          <a href="dangnhap.html"><button type="button" class="login-btn" ><i class="fas fa-user"></i></button></a>
+        </div>
+      </header>
+
+      <main>
+          
+        <div class="container my-5">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="i2.PNG" class="img-fluid rounded" alt="Image">
+            </div>
+            <div class="col-md-6 border rounded p-3 bg-white">
+             <center> <h1 class="text-primary display-5" style="margin-top: 10%;">𝐄𝐚𝐬𝐲 𝐎𝐧𝐥𝐢𝐧𝐞 𝐄𝐥𝐞𝐜𝐭𝐢𝐨𝐧</h1>
+              <p class="text-secondary display-6"><b> 𝙴𝚊𝚜𝚢 𝙾𝚗𝚕𝚒𝚗𝚎 𝙴𝚕𝚎𝚌𝚝𝚒𝚘𝚗
+                𝙴𝚡𝚌𝚎𝚕𝚕𝚎𝚗𝚌𝚎</b></p>
+              <p class="text-muted">
+                ElectionBuddy guarantees election integrity, <br> boosts voter engagement and saves serious hours. <br>
+                It's free to test and free for up to 20 voters. <br>
+              </p></center>
+               <center> <button type="button1" class="btn1 btn1-read-more">READ MORE</button></center>
+            </div>
+          </div>
+        </div>
+        <div style="width: 250px; height: 20px;"></div>
+        <center style="color:  rgb(81, 101, 139);;">  <h1>𝐑𝐞𝐯𝐢𝐞𝐰𝐬 𝐟𝐫𝐨𝐦 𝐨𝐮𝐫 𝐜𝐮𝐬𝐭𝐨𝐦𝐞𝐫𝐬</h1></center>
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="stars" style="font-size: 90px;">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+        </div>
+        <div class="container my-5">
+          <div class="row">
+            <div class="col-md-5 border rounded p-3 bg-white">
+              <h2 class="text-primary"><center><img src="sach.PNG" alt=""></center></h2>
+            
+              <p class="text-pink display-4"  style="font-size: 30px; color: rgb(218, 109, 145); padding: 30px;">
+                "𝘔𝘢𝘬𝘦 𝘺𝘰𝘶𝘳 𝘷𝘰𝘪𝘤𝘦 𝘩𝘦𝘢𝘳𝘥 𝘢𝘯𝘥 𝘣𝘦 𝘱𝘢𝘳𝘵 𝘰𝘧 𝘵𝘩𝘦 𝘥𝘦𝘮𝘰𝘤𝘳𝘢𝘵𝘪𝘤 𝘱𝘳𝘰𝘤𝘦𝘴𝘴 𝘸𝘪𝘵𝘩 𝘰𝘶𝘳 𝘶𝘴𝘦𝘳-𝘧𝘳𝘪𝘦𝘯𝘥𝘭𝘺 𝘢𝘯𝘥 𝘴𝘦𝘤𝘶𝘳𝘦 𝘸𝘦𝘣 𝘷𝘰𝘵𝘪𝘯𝘨 𝘱𝘭𝘢𝘵𝘧𝘰𝘳𝘮. 𝘑𝘰𝘪𝘯 𝘶𝘴 𝘯𝘰𝘸 𝘢𝘯𝘥 𝘤𝘢𝘴𝘵 𝘺𝘰𝘶𝘳 𝘷𝘰𝘵𝘦 𝘸𝘪𝘵𝘩 𝘤𝘰𝘯𝘧𝘪𝘥𝘦𝘯𝘤𝘦!"
+              </p>
+              <p class="text-secondary"><center>With our love</center></p>
+            </div>
+            <div class="col-md-7">
+              <img src="nguoi1.PNG" class="img-fluid rounded" alt="Image">
+            </div>
+          </div>
+        </div>
+
+        <!-- lợi ích -->
+        <div style="width: 250px; height: 20px;"></div>
+        <center style="color:  rgb(81, 101, 139);;">  <h1>𝐖𝐡𝐲 𝐚𝐝𝐦𝐢𝐧𝐬 𝐚𝐧𝐝 𝐯𝐨𝐭𝐞𝐫𝐬 𝐥𝐨𝐯𝐞 𝐮𝐬</h1></center>
+        <div class="container my-5">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                  <span class="bi bi-geo-alt fs-3 me-3"></span>
+                  <div>
+                    <h5 class="card-title"><center>Easy and Convenient</center></h5>
+                    <p class="card-text">Voters choose where and when to cast their ballots.</p>
+                  </div>
+                </div>
+                <div class="card-overlay">
+                  <p class="card-overlay-text">Voters can easily and conveniently cast their ballots at a time and place that suits them.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                  <span class="bi bi-shield-lock fs-3 me-3"></span>
+                  <div>
+                    <h5 class="card-title"><center>Anonymous and Safe</center></h5>
+                    <p class="card-text">Voters cast ballots by secret ballot with verifiable results.</p>
+                  </div>
+                </div>
+                <div class="card-overlay">
+                  <p class="card-overlay-text">Voters can cast their ballots anonymously and safely, with results that can be verified.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                  <span class="bi bi-envelope fs-3 me-3"></span>
+                  <div>
+                    <h5 class="card-title"><center>Easy to Reach Voters</center></h5>
+                    <p class="card-text">Notify voters by email, text message, and letter.</p>
+                  </div>
+                </div>
+                <div class="card-overlay">
+                  <p class="card-overlay-text">Reach voters easily by sending notifications via email, text message, or letter.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <div class="card-body d-flex align-items-center">
+                  <span class="bi bi-bar-chart fs-3 me-3"></span>
+                  <div>
+                    <h5 class="card-title"><center>Quick Results</center></h5>
+                    <p class="card-text">Share reports with stats and graphs when voting is over.</p>
+                  </div>
+                </div>
+                <div class="card-overlay">
+                  <p class="card-overlay-text">Get quick results by sharing reports with statistics and graphs once voting is over.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+
+
+      <footer class="chan">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <h3>Web Voting</h3>
+              <p>A secure and user-friendly online voting platform for all your needs.</p>
+            </div>
+            <div class="col-12 col-md-4">
+              <h3>Features</h3>
+              <ul>
+                <li>Easy and intuitive interface</li>
+                <li>Secure and encrypted votes</li>
+                <li>Real-time results tracking</li>
+                <li>Customizable voting options</li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-4">
+              <h3>About the Author</h3>
+              <p>Web Voting was created by John Smith, a software developer passionate about building secure and reliable applications for the web.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script>
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const navLinks = document.querySelector(".nav-links");
+
+        mobileMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+        });
+      </script>
+</body>
+</html>

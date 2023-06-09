@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*header*/
+        body{
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 90px;
+        padding: 0;
+        margin: 0;
+        width: auto;
+        background-color: white;
+        border-bottom: 0.5px solid black;
+        color: rgba(76, 124, 179, 0.822);
+        }
+
+        .logo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 50px;
+        margin-right: 14%;
+        }
+
+        nav {
+        display: flex;
+        }
+
+        .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        }
+
+        .nav-links li {
+        margin-left: 40px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-right: 30px;
+        font-size: 25px;
+        }
+
+        .nav-links li:first-child {
+        margin-left: 0;
+        }
+
+        .nav-links a {
+        color: #4e80af;
+        text-decoration: none;
+        }
+
+        .mobile-menu {
+        display: none;
+        cursor: pointer;
+        }
+
+        .mobile-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background-color: #161010;
+        transition: all 0.3s ease-in-out;
+        }
+
+        .search {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+        }
+
+        .search input {
+        width: 300px;
+        padding: 5px;
+
+        border-radius: 5px;
+        }
+
+        .search button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        }
+
+        .login {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+        }
+
+        .login-btn,
+        .register-btn {
+        padding: 5px 10px;
+        margin-left: 10px;
+        font-size: 25px;
+        background-color: transparent;
+        color: #20438d;
+        cursor: pointer;
+        border: none;
+        margin-right: 50px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .login-btn:hover,
+        .register-btn:hover {
+        background-color: #4a84b4c5;
+        color: #333;
+        }
+
+        @media screen and (max-width: 1145px) {
+        .nav-links {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #312e2e;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-links.active {
+            left: 0;
+        }
+
+        .nav-links li {
+            margin: 20px 0;
+        }
+
+        .mobile-menu {
+            display: block;
+        }
+
+        .search,
+        .login {
+            display: none;
+        }
+        }
+        .col{
+            padding: 20px;
+        }
+
+       /* cái nutd */
+      /* cái nút */
+.btn1-read-more {
+  background-color: #488eaf;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btn1-read-more:hover {
+  background-color: #fff;
+  color: #82a3b942;
+}
+         .chan{
+      background-color: #69a0c0a8;
+      padding: 30px ;
+     }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">Logo</div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="main2.html">Home</a></li>
+            <li><a href="main3.html">Contact</a></li>
+            <li><a href="main4.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="Search...">
+          <button type="button"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="login">
+          <a href="dangnhap.html"><button type="button" class="login-btn" ><i class="fas fa-user"></i></button></a>
+        </div>
+      </header>
+   <center><h2 class="display-3  " style="color: #354c72;">𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐰𝐢𝐭𝐡 𝐮𝐬</h2></center>
+      <main>
+        <div class="container">
+            <div class="row">
+              <div class="col">
+               <center> <i class="fas fa-map-marker-alt" style="color: #3562b1; font-size: 4rem;"></i></center>
+                <br>
+                <center><b>Adress:</b> 123 Main Street
+                    Suite 456
+                    Anytown, CA 12345
+                    United States</center>
+              </div>
+              <div class="col">
+                <center><i class="fas fa-phone" style="color: #5f79a5; font-size: 4rem;"></i></center>. <br>
+                <center><b>Phone:</b> 01293848484</center>
+              </div>
+              <div class="col">
+                <center><i class="fas fa-paper-plane" style="color: #4166a4; font-size: 4rem;"></i></center> . <br>
+                <center><b>Mail:</b> nguyentt@12334</center>
+              </div>
+              <!-- <div class="col">
+                <center><i class="fas fa-globe-europe" style="color: #4f6da1; font-size: 4rem;"></i></center> . <br>
+                <center><b>Website:</b> nguyentt.com</center>
+              
+              </div> -->
+            </div>
+            <!-- phần contact nè -->
+            <div class="container my-5">
+                <div class="row">
+                  <div class="col-md-5 border rounded p-3 bg-white">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                          <label for="inputEmail4" class="form-label">Name</label>
+                          <input type="email" class="form-control" id="inputEmail4">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inputPassword4" class="form-label">Email</label>
+                          <input type="password" class="form-control" id="inputPassword4">
+                        </div>
+                        <div class="col-12">
+                          <label for="inputAddress" class="form-label">Address</label>
+                          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="col-12">
+                          <label for="inputAddress2" class="form-label">Message</label>
+                          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="inputCity" class="form-label">City</label>
+                          <input type="text" class="form-control" id="inputCity">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="inputState" class="form-label">State</label>
+                          <select id="inputState" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>...</option>
+                          </select>
+                        </div>
+                        <div class="col-md-2">
+                          <label for="inputZip" class="form-label">Zip</label>
+                          <input type="text" class="form-control" id="inputZip">
+                        </div>
+                        <div class="col-12">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                              Check me out
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                            <center> <button type="button1" class="btn1 btn1-read-more">SENT</button></center>
+                        </div>
+                      </form>
+                  </div>
+                  <div class="col-md-7">
+                    <img src="ct1.PNG" class="img-fluid rounded" alt="Image">
+                  </div>
+                </div>
+              </div>
+       
+       
+      </main>
+
+
+      <footer class="chan">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <h3>Web Voting</h3>
+              <p>A secure and user-friendly online voting platform for all your needs.</p>
+            </div>
+            <div class="col-12 col-md-4">
+              <h3>Features</h3>
+              <ul>
+                <li>Easy and intuitive interface</li>
+                <li>Secure and encrypted votes</li>
+                <li>Real-time results tracking</li>
+                <li>Customizable voting options</li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-4">
+              <h3>About the Author</h3>
+              <p>Web Voting was created by John Smith, a software developer passionate about building secure and reliable applications for the web.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script>
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const navLinks = document.querySelector(".nav-links");
+
+        mobileMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+        });
+      </script>
+</body>
+</html>
